@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:HomeApp"
+            x:Class="HomeApp.Pages.RegisterPage">
+
+    <StackLayout VerticalOptions="Center"  HorizontalOptions="Center"  x:Name="stackLayout">
+        <Entry Placeholder="Your e-mail" FontSize="Title" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <Button x:Name="loginButton" Text="Register" Clicked="Register_Click" />
+        <Label Text="Already have an account" FontSize="Medium"  Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    </StackLayout>
+</ContentPage>
