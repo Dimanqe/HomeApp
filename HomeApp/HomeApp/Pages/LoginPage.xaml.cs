@@ -12,7 +12,7 @@ namespace HomeApp.Pages
 {
     public partial class LoginPage : ContentPage
     {
-        // Константа для текста кнопки
+        // Константа для текста кнопки                      
         public const string BUTTON_TEXT = "Войти";
         // Переменная счетчика
         public static int loginCouner = 0;
@@ -20,33 +20,36 @@ namespace HomeApp.Pages
         public LoginPage()
         {
             InitializeComponent();
+
         }
 
         /// <summary>
         /// По клику обрабатываем счётчик и выводим разные сообщения
         /// </summary>
-        private void Login_Click(object sender, EventArgs e)
+        private async void Login_Click(object sender, EventArgs e)
         {
             if (loginCouner == 0)
             {
-                // Если первая попытка - просто меняем сообщения
-                string xaml = "<Button Text=\"⌛ Выполняется вход..\"  />";
-                loginButton.LoadFromXaml(xaml);
+                loginButton.Text = $"Выполняется вход..";
             }
-            else if (loginCouner > 5) // Слишком много попыток - показываем ошибку
+            else if (loginCouner > 5)
             {
-                // Деактивируем кнопку
+                DevicesPage devicesPage = new DevicesPage();
+                await Navigation.PushAsync(devicesPage);
                 loginButton.IsEnabled = false;
-                // Показываем текстовое сообщение об ошибке
-                errorMessage.Text = "Слишком много попыток! Попробуйте позже.";
+
+                // Получаем последний дочерний элемент, используя свойство Children, затем выполняем распаковку
+
+                var infoMessage = (Label)stackLayout.Children.Last();
+                // Задаем текст элемента
+                infoMessage.Text = "Слишком много попыток! Попробуйте позже";
+
             }
             else
             {
-                // Изменяем текст кнопки и показываем количество попыток входа
                 loginButton.Text = $"Выполняется вход...   Попыток входа: {loginCouner}";
             }
 
-            // Увеличиваем счетчик
             loginCouner += 1;
         }
     }
