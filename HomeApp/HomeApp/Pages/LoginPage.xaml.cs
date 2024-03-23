@@ -34,9 +34,9 @@ namespace HomeApp.Pages
             }
             else if (loginCouner > 5)
             {
-                DevicesPage devicesPage = new DevicesPage();
-                await Navigation.PushAsync(devicesPage);
-                loginButton.IsEnabled = false;
+               
+                await Navigation.PushAsync(new NavigatorPage());
+                loginButton.IsEnabled = true;
 
                 // Получаем последний дочерний элемент, используя свойство Children, затем выполняем распаковку
 
