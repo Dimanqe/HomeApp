@@ -13,6 +13,7 @@ namespace HomeApp.Pages
             InitializeComponent();
             ScanOutside();
             ScanInside();
+            GetPressure();
         }
 
         /// <summary>
@@ -61,7 +62,7 @@ namespace HomeApp.Pages
         public void ScanInside()
         {
             absLayout.Children.Add(
-                new BoxView { Color = Color.LightSalmon },
+                new BoxView { Color = Color.GreenYellow },
                 new Rectangle(130, 10, 100, 70)
             );
 
@@ -87,5 +88,20 @@ namespace HomeApp.Pages
                 new Rectangle(130, 15, 100, 70)
             );
         }
+        public void GetPressure()
+        {
+            // Создаем новый элемент
+            var pressureBox = new BoxView { Color = Color.BurlyWood };
+            // Указываем позицию
+            var position = new Rectangle(240, 10, 173, 70);
+            // Сохраняем настройки лейаута
+            AbsoluteLayout.SetLayoutBounds(pressureBox, position);
+            // Устанавливаем конфигурацию (все величины абсолютные)
+            AbsoluteLayout.SetLayoutFlags(pressureBox, AbsoluteLayoutFlags.None);
+
+            // Добавляем элемент
+            absLayout.Children.Add(pressureBox);
+        }
+
     }
 }

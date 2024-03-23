@@ -9,6 +9,9 @@
                 HorizontalOptions="CenterAndExpand" />
             <Button x:Name="climateButton" Text="Климат" Clicked="GetClimate" />
             <Button x:Name="deviceButton" Text="Устройства" Clicked="GetDevice" />
+            <Button x:Name="aboutButton" Text="О приложении" Clicked="GetInfo" />
+            <Button x:Name="gridButton" Text="Сетка" Clicked="GetGrid" />
+            <Button x:Name="mergedGridButton" Text="Слитая Сетка" Clicked="GetMergedGrid" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

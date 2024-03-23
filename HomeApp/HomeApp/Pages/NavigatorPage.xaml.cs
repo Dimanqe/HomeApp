@@ -27,5 +27,17 @@ namespace HomeApp.Pages
         {
             await Navigation.PushAsync(new ClimatePage());
         }
+        public async void GetInfo(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
+        }
+        public async void GetGrid(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GridPage());
+        }
+        public async void GetMergedGrid(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MergeGridPage());
+        }
     }
 }
