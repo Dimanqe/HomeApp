@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:HomeApp.Pages"
+x:Class="HomeApp.Pages.ClimatePage"
+>
+
+    <StackLayout BackgroundColor="AliceBlue">
+        <Label Text="HomeApp - Климат вашего дома" HorizontalOptions="Center"  FontSize="Title" Padding="30,10,30,10" />
+        <AbsoluteLayout BackgroundColor ="AliceBlue"  x:Name="absLayout"></AbsoluteLayout>
+    </StackLayout>
+</ContentPage>
