@@ -34,15 +34,19 @@ namespace HomeApp.Pages
             }
             else if (loginCouner > 5)
             {
-               
+
                 await Navigation.PushAsync(new NavigatorPage());
                 loginButton.IsEnabled = true;
+
 
                 // Получаем последний дочерний элемент, используя свойство Children, затем выполняем распаковку
 
                 var infoMessage = (Label)stackLayout.Children.Last();
                 // Задаем текст элемента
+                infoMessage.TextColor = Color.FromRgb(255, 127, 80);
                 infoMessage.Text = "Слишком много попыток! Попробуйте позже";
+
+                
 
             }
             else

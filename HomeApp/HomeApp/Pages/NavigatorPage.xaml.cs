@@ -39,5 +39,9 @@ namespace HomeApp.Pages
         {
             await Navigation.PushAsync(new MergeGridPage());
         }
+        public async void GetPadding(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CsharpPaddingPage());
+        }
     }
 }

@@ -12,6 +12,7 @@
             <Button x:Name="aboutButton" Text="О приложении" Clicked="GetInfo" />
             <Button x:Name="gridButton" Text="Сетка" Clicked="GetGrid" />
             <Button x:Name="mergedGridButton" Text="Слитая Сетка" Clicked="GetMergedGrid" />
+            <Button x:Name="paddingButton" Text="Внутренние отступы" Clicked="GetPadding" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

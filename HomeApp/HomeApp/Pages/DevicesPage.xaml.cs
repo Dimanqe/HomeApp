@@ -47,13 +47,18 @@ namespace HomeApp.Pages
             foreach (string deviceName in homeDevices)
             {
                 var deviceLabel = new Label() { Text = $"   {deviceName}", FontSize = 17 };
-                //innerStack.Children.Add(new Label() { Text="Space"});
+                innerStack.Children.Add(new Label() { Margin=new Thickness(10) });
                 innerStack.Children.Add(deviceLabel);
             }
 
             // Сохраним стек внутрь уже имеющегося в xaml-файле блока прокручиваемой разметки
             scrollView.Content = innerStack;
 
+        }
+
+        public async void AddNew(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NewDevicePage());
         }
     }
 }
