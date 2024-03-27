@@ -9,6 +9,7 @@ x:Class="HomeApp.Pages.LoginPage">
     <StackLayout x:Name="stackLayout" VerticalOptions="Center" HorizontalOptions="Center">
         <Label Text="HomeApp - Ваш умный дом" FontSize="Title" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
         <Button x:Name="loginButton" Text="{x:Static local:LoginPage.BUTTON_TEXT}" TextColor="{local2:RgbExtension Red=11, Green=239, Blue=72}" Margin="30" CornerRadius="{local2:ButtonViewExtension ButtonStyle=Round}" Clicked="Login_Click" />
+        <Button x:Name="registButton" Text="Зарегистрироваться" TextColor="Aqua" Margin="30" CornerRadius="{local2:ButtonViewExtension ButtonStyle=Round}" Clicked="Register_Click" />
         <Label x:Name="infoMessage" FontSize="Small" TextColor="{local2:RgbExtension Red=255, Green=0,Blue=255}" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
     </StackLayout>
 </ContentPage>

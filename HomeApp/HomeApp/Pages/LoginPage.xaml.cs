@@ -56,5 +56,11 @@ namespace HomeApp.Pages
 
             loginCouner += 1;
         }
+
+
+        private async void Register_Click(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegisterPage());
+        }
     }
 }
