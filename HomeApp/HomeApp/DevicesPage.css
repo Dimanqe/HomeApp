@@ -1,0 +1,15 @@
+﻿/* Селектор элемента */
+stacklayout {
+    background - color: lightblue;
+}
+
+/* Селектор класса */
+.btn - add {
+    margin: 8;
+}
+
+/* Селектор идентификатора */
+#header {
+    font - size: 24;
+    font - weight: bold;
+}

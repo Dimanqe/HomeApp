@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomeApp.Pages.BindingPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="H" BindingContext="{x:Reference Name=slider}"
+                   Rotation="{Binding Path=Value}" FontSize="270"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand">
+
+            </Label>
+            <Slider x:Name="slider"
+                    Maximum="360"
+                    MinimumTrackColor="DodgerBlue"
+                    MaximumTrackColor="Gray"
+                    ThumbColor="DodgerBlue"
+                    VerticalOptions="CenterAndExpand">
+
+            </Slider>
+            <Label BindingContext="{x:Reference slider}"
+                   Text="{Binding Value, StringFormat='Повторот на {0:F0} градусов'}"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

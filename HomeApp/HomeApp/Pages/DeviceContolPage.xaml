@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:HomeApp.Pages" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HomeApp.Pages.DeviceControlPage">
+    <StackLayout BackgroundColor="LightGray">
+        <Label Text="HomeApp - Панель управления" HorizontalOptions="Center" FontSize="Title" Padding="30,10,30,10" />
+        <StackLayout x:Name="stackLayout" BackgroundColor="LightGray" Padding="30,10">
+            <Label Text="Устройство" />
+            <Entry x:Name="deviceEntry" Text="Холодильник">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters />
+                        </VisualState>
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Cornflowerblue" />
+                                <Setter Property="BackgroundColor" Value="Lavender" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="LightGray" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Entry>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

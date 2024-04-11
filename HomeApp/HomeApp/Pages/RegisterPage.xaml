@@ -1,14 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-xmlns:local="clr-namespace:HomeApp"
-x:Class="HomeApp.Pages.RegisterPage"
-BackgroundImageSource="HomeBackground.jpg"
->
-
-    <StackLayout VerticalOptions="Center"  HorizontalOptions="Center"  x:Name="stackLayout" >
-        <Entry  x:Name="placeHolder" Placeholder="Type your e-mail.." FontSize="Title" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" PlaceholderColor="SkyBlue" />
-        <Button x:Name="loginButton" Text="Register" Opacity="0.8"/>
-        <Label Text="Already have an account" FontSize="Subtitle"  Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="LightBlue"/>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:HomeApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HomeApp.Pages.RegisterPage" BackgroundImageSource="HomeBackground.jpg">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <Style.Triggers>
+                    <EventTrigger Event="TextChanged">
+                        <local:EmailTriggerAction />
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="stackLayout">
+        <Entry x:Name="placeHolder" Placeholder="Ваш e-mail.." FontSize="Title" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" PlaceholderColor="SkyBlue" Style="{StaticResource Key=entryStyle}" />
+        <Button x:Name="registerButton" Text="Регистрация" />
+        <Label Text="У меня есть учетная запись" FontSize="Subtitle" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="LightBlue" />
     </StackLayout>
 </ContentPage>

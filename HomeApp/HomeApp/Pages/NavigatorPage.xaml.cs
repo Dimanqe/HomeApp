@@ -43,5 +43,24 @@ namespace HomeApp.Pages
         {
             await Navigation.PushAsync(new CsharpPaddingPage());
         }
+        public async void GetProfile(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProfilePage());
+        }
+        public async void GetWebView(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new WebPage());
+        }
+        public async void GetBindingTesting(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BindingPage());
+        }
+        public async void GetBindingMode(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BindingModePage());
+        }public async void GetListView(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DeviceListPage());
+        }
     }
 }

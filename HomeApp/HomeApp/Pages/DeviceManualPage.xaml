@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HomeApp.Pages"
+             x:Class="HomeApp.Pages.DeviceManualPage"
+             Title="{x:Static local:DeviceManualPage.DeviceName}"
+>
+
+    <StackLayout x:Name="stackLayout" BackgroundColor="LightGray"  Padding="0, 20">
+        <Editor HeightRequest="350" Background="AliceBlue" Margin="30,10" x:Name="deviceManualText"></Editor>
+        <Button Text="Сохранить" BackgroundColor="Silver" Margin="30,10" x:Name="saveButton" Clicked="saveButton_Clicked"></Button>
+    </StackLayout>
+</ContentPage>

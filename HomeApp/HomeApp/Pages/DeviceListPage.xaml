@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomeApp.Pages.DeviceListPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Label Text="HomeApp - Ваши устройства" HorizontalOptions="Center" FontSize="Large"  Padding="30,10,30,10" StyleId="header" />
+        <ListView x:Name="deviceList"
+                  HasUnevenRows="True"
+                  GroupDisplayBinding="{Binding Name}"
+                  ItemsSource="{Binding DeviceGroups}"
+                  IsGroupingEnabled="True"
+                  SeparatorVisibility="Default"
+                  RowHeight="60"
+                  CachingStrategy="RecycleElement"
+                  ItemSelected="deviceList_ItemSelected"
+        >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Name}"
+                        Detail="{Binding Description}"
+                        TextColor="DodgerBlue"
+                        DetailColor="Gray"
+                    />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid ColumnDefinitions="Auto" RowDefinitions="45" Margin="5, 10" >
+            <Button Text="Profile" Clicked="UserProfileButton_Clicked"  Grid.Column="0" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="New" Clicked="NewDeviceButton_Clicked" Grid.Column="1" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="✏️" Clicked="EditDeviceButton_Clicked" Grid.Column="2" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="" Clicked="DeleteButton_Clicked"  Grid.Column="3" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="Exit" Clicked="LogoutButton_Clicked" Grid.Column="4" HorizontalOptions="FillAndExpand"></Button>
+        </Grid>
+    </StackLayout>
+</ContentPage>

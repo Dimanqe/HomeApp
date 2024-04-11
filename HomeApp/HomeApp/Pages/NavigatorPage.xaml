@@ -3,16 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeApp.Pages.NavigatorPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Добро пожаловать в наш умный дом"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button x:Name="climateButton" Text="Климат" Clicked="GetClimate" />
-            <Button x:Name="deviceButton" Text="Устройства" Clicked="GetDevice" />
-            <Button x:Name="aboutButton" Text="О приложении" Clicked="GetInfo" />
-            <Button x:Name="gridButton" Text="Сетка" Clicked="GetGrid" />
-            <Button x:Name="mergedGridButton" Text="Слитая Сетка" Clicked="GetMergedGrid" />
-            <Button x:Name="paddingButton" Text="Внутренние отступы" Clicked="GetPadding" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Добро пожаловать в наш умный дом"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand" />
+                <Button x:Name="webButton" Text="Браузер" Clicked="GetWebView" />
+                <Button x:Name="profileButton" Text="Настройки профиля" Clicked="GetProfile" />
+                <Button x:Name="climateButton" Text="Климат" Clicked="GetClimate" />
+                <Button x:Name="deviceButton" Text="Устройства" Clicked="GetDevice" />
+                <Button x:Name="aboutButton" Text="О приложении" Clicked="GetInfo" />
+                <Button x:Name="gridButton" Text="Сетка" Clicked="GetGrid" />
+                <Button x:Name="mergedGridButton" Text="Слитая Сетка" Clicked="GetMergedGrid" />
+                <Button x:Name="paddingButton" Text="Внутренние отступы" Clicked="GetPadding" />
+                <Button x:Name="bindingButton" Text="Тест привязок" Clicked="GetBindingTesting" />
+                <Button x:Name="bindingModeButton" Text="Тест режимов привязок" Clicked="GetBindingMode" />
+                <Button x:Name="ListViewButton" Text="List View" Clicked="GetListView" />
+            </StackLayout>
+        </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>

@@ -22,6 +22,22 @@ namespace HomeApp.Pages
         public RegisterPage()
         {
             InitializeComponent();
+            PlatformAdjust();
+
+            var passFiled = new Entry();
+            var passFieldTrigger = new Trigger(typeof(Entry))
+            {
+                Property = Entry.IsFocusedProperty,
+                Value = true
+            };
+            passFieldTrigger.Setters.Add(new Setter()
+            {
+                Property = Entry.BackgroundColorProperty,
+                Value = Color.Gray
+            });
+            passFiled.Triggers.Add(passFieldTrigger);
+            placeHolder.Triggers.Add(passFieldTrigger);
+
         }
 
         /// <summary>
@@ -32,9 +48,21 @@ namespace HomeApp.Pages
             if (string.IsNullOrWhiteSpace(email))
             {
                 // Если первая попытка - просто меняем сообщения
-                loginButton.Text = $"Введите email";
+                registerButton.Text = $"Введите email";
             }
            
         }
+        public void PlatformAdjust()
+        {
+            if (Device.RuntimePlatform == Device.UWP)
+            {
+                placeHolder.PlaceholderColor = Color.SlateGray;
+                registerButton.TextColor = Color.AliceBlue;
+                registerButton.Margin = new Thickness(0, 5);
+            }
+            
+        }
+
+
     }
 }

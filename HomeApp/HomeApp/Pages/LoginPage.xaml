@@ -1,15 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-xmlns:local="clr-namespace:HomeApp.Pages"
-xmlns:local2="clr-namespace:HomeApp"          
-             
-x:Class="HomeApp.Pages.LoginPage">
-
-    <StackLayout x:Name="stackLayout" VerticalOptions="Center" HorizontalOptions="Center">
-        <Label Text="HomeApp - Ваш умный дом" FontSize="Title" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-        <Button x:Name="loginButton" Text="{x:Static local:LoginPage.BUTTON_TEXT}" TextColor="{local2:RgbExtension Red=11, Green=239, Blue=72}" Margin="30" CornerRadius="{local2:ButtonViewExtension ButtonStyle=Round}" Clicked="Login_Click" />
-        <Button x:Name="registButton" Text="Зарегистрироваться" TextColor="Aqua" Margin="30" CornerRadius="{local2:ButtonViewExtension ButtonStyle=Round}" Clicked="Register_Click" />
-        <Label x:Name="infoMessage" FontSize="Small" TextColor="{local2:RgbExtension Red=255, Green=0,Blue=255}" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasNavigationBar="False" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:HomeApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HomeApp.Pages.LoginPage">
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="stackLayout">
+        <Label Text="HomeApp - Ваш умный дом" FontSize="Title" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+        <Button x:Name="loginButton" Text="{x:Static local:Pages.LoginPage.BUTTON_TEXT}" Clicked="Login_Click" />
+        <Button x:Name="registerButton" Text="{x:Static local:Pages.LoginPage.REGBUTTON_TEXT}" Clicked="Register_Click" />
+        <Label x:Name="infoMessage" FontSize="{DynamicResource Key=errorFont}" TextColor="{DynamicResource Key=errorColor}" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+        <Label x:Name="runningDevice" FontSize="15" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
     </StackLayout>
 </ContentPage>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="HomeApp.Pages.BindingModePage" >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Общий стиль для слайдеров на странице-->
+            <Style TargetType="Slider">
+                <Setter Property="MinimumTrackColor" Value="DodgerBlue" />
+                <Setter Property="MaximumTrackColor" Value="Gray" />
+                <Setter Property="ThumbColor" Value="DodgerBlue" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="label"
+              Text="H"
+              FontSize="80"
+              HorizontalOptions="Center"
+              VerticalOptions="CenterAndExpand" />
+
+        <!-- Масштаб -->
+        <Slider x:Name="scaleSlider"
+               BindingContext="{x:Reference label}"
+               Grid.Row="1" Grid.Column="0"
+               Maximum="10"
+               Value="{Binding Scale, Mode=TwoWay}" />
+
+        <Label BindingContext="{x:Reference scaleSlider}"
+              Text="{Binding Value, StringFormat='Scale x {0:F1}    '}"
+              Grid.Row="1" Grid.Column="1"
+              VerticalTextAlignment="Center" />
+
+        <!-- Поворот -->
+        <Slider x:Name="rotationSlider"
+               BindingContext="{x:Reference label}"
+               Grid.Row="2" Grid.Column="0"
+               Maximum="360"
+               Value="{Binding Rotation, Mode=OneWayToSource}" />
+
+        <Label BindingContext="{x:Reference rotationSlider}"
+              Text="{Binding Value, StringFormat='Spin {0:F0}'}"
+              Grid.Row="2" Grid.Column="1"
+              VerticalTextAlignment="Center" />
+
+        <!-- Вращение по оси X -->
+        <Slider x:Name="rotationXSlider"
+               BindingContext="{x:Reference label}"
+               Grid.Row="3" Grid.Column="0"
+               Maximum="360"
+               Value="{Binding RotationX, Mode=OneWayToSource}" />
+
+        <Label BindingContext="{x:Reference rotationXSlider}"
+              Text="{Binding Value, StringFormat='X = {0:F0}'}"
+              Grid.Row="3" Grid.Column="1"
+              VerticalTextAlignment="Center" />
+
+        <!-- Вращение по оси Y -->
+        <Slider x:Name="rotationYSlider"
+               BindingContext="{x:Reference label}"
+               Grid.Row="4" Grid.Column="0"
+               Maximum="360"
+               Value="{Binding RotationY, Mode=OneWayToSource}" />
+
+        <Label BindingContext="{x:Reference rotationYSlider}"
+              Text="{Binding Value, StringFormat='Y = {0:F0}'}"
+              Grid.Row="4" Grid.Column="1"
+             
+              VerticalTextAlignment="Center" />
+    </Grid>
+
+</ContentPage>
